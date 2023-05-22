@@ -21,7 +21,9 @@
 {% endfor %}
 
 
+<a href="{% url 'SchoolUpdate' pk=sclobject.pk %}" class="btn btn-primary">UpdateData</a>
 
+<a href="{% url 'SchoolDelete' pk=sclobject.pk %}" class="btn btn-danger">DeleteData</a>
 
 
 

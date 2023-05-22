@@ -5,12 +5,30 @@
 {% endblock %}
 
 {% block body_block %}
-    <h1 >SCHOOL INSERT</h1>
+
+    {% if form.instance.pk %}
+
+    <h1 >Fill The UpdateForm</h1>    
+    
+    {% else %}
+    
+    <h1 >Fill The CreateForm</h1>
+    
+    {% endif %}
+
     <form method="POST">
         {% csrf_token %}
+
         {{form.as_p}}
 
-<input type="submit" value="create" class="btn-btn-primary">
+        {% if form.instance.pk %}
 
+        <input type="submit" value="Update" class="btn btn-primary">
+
+        {% else %}
+
+        <input type="submit" value="create" class="btn btn-primary">
+
+        {% endif %}
     </form>
 {% endblock %}
